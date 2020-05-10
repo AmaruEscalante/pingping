@@ -6,21 +6,16 @@
 #define PINGPONG_PLAYER_H
 
 #include <SFML/Graphics/RenderWindow.hpp>
+#include "Figure.h"
 
-class Player {
+class Player: public Figure {
 private:
-    float pos_x;
-    float pos_y;
-    float width;
-    float height;
     int score;
-    float des_x;
-    float des_y;
-    sf::RenderWindow* window;
+    sf::RectangleShape rectangle;
 public:
-    Player(float x, float y, float w, float height, int s, float dx, float dy,
-            sf::RenderWindow* wnd);
-    void draw();
+    Player(int width, int height, sf::RenderWindow *window);
+    void draw() override;
+    void move() override;
     void go_up();
     void go_down();
 };

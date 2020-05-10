@@ -1,15 +1,20 @@
 #include <iostream>
 #include <SFML/Graphics.hpp>
 #include "Game.h"
+#include "Game.cpp"
 #include "Ball.h"
 #include "GameScreen.h"
+#include "GameScreen.cpp"
 #include "Player.h"
+#include "Player.cpp"
+#include "Figure.h"
+#include "Figure.cpp"
 
 
 
 int main()
 {
-    sf::RenderWindow window(sf::VideoMode(200, 200), "SFML works!");
+    /* sf::RenderWindow window(sf::VideoMode(200, 200), "SFML works!");
     sf::CircleShape shape(100.f);
     shape.setFillColor(sf::Color::Green);
 
@@ -25,8 +30,9 @@ int main()
         window.clear();
         window.draw(shape);
         window.display();
-    }
+    }*/
 //   Game game(400, 100, 10, 20);
+    Game pong(0,0,800,400);
 
 
     return 0;

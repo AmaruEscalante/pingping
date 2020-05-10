@@ -4,18 +4,19 @@
 
 #include "GameScreen.h"
 
-GameScreen::GameScreen(int w, int h, sf::RenderWindow *wi) {
+GameScreen::GameScreen(int w, int h, sf::RenderWindow *wnd) {
     width = w;
     height = h;
-    window = wi;
-    player1 = new Player(10,10,15,40,0,0,0, window);
-    player2 = new Player(window->getSize().x - 10 - width,10,15,40,0,0,0, window);
+    window = wnd;
+    player1 = new Player(10, 10, wnd);
+
+  //  player2 = new Player(window->getSize().x - 10 - width, 10, wnd);
 }
 
 void GameScreen::draw() {
     player1->draw();
-    player2->draw();
-    ball->draw();
+ //   player2->draw();
+//    ball->draw();
 }
 
 void GameScreen::refresh(sf::Event e) {

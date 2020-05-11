@@ -5,7 +5,7 @@
 #include <SFML/Graphics/RectangleShape.hpp>
 #include "Player.h"
 
-Player::Player(int width, int height,
+Player::Player(int pos_x, int pos_y,int width, int height,
         sf::RenderWindow *window):
         Figure(width, height, window) {
     rectangle.setSize(sf::Vector2f(width, height));
@@ -19,13 +19,13 @@ void Player::draw() {
 
 void Player::go_up() {
     if(pos_y - des_y > 0){
-        pos_y-=des_y;
+        pos_y-=10;
     }
 }
 
 void Player::go_down() {
     if(pos_y + height < 500){
-        pos_y+= des_y;
+        pos_y+=10;
     }
 }
 

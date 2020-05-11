@@ -13,7 +13,7 @@ private:
     int score;
     sf::RectangleShape rectangle;
 public:
-    Player(int width, int height, sf::RenderWindow *window);
+    Player(int pos_x, int pos_y, int width, int height, sf::RenderWindow *window);
     void draw() override;
     void move() override;
     void go_up();

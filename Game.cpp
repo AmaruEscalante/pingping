@@ -19,5 +19,16 @@ Game::~Game() {
 }
 
 void Game::execute() {
+    while (window.isOpen()){
 
+        sf::Event event{};
+        while (window.pollEvent(event)){
+            gamescreen->refresh(event);
+            if(event.type == sf::Event::Closed)
+            window.close();
+        }
+        window.clear();
+        gamescreen->draw();
+        window.display();
+    }
 }

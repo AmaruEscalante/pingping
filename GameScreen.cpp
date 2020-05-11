@@ -8,14 +8,14 @@ GameScreen::GameScreen(int w, int h, sf::RenderWindow *wnd) {
     width = w;
     height = h;
     window = wnd;
-    player1 = new Player(10, 10, wnd);
-
-  //  player2 = new Player(window->getSize().x - 10 - width, 10, wnd);
+    player1 = new Player(10,window->getSize().y/2-50, 10, 50, wnd);
+    player2 = new Player(window->getSize().x-10*2,window->getSize().y/2-50, 10, 50, wnd);
+    //window->getSize().x - 10 - width
 }
 
 void GameScreen::draw() {
     player1->draw();
- //   player2->draw();
+    player2->draw();
 //    ball->draw();
 }
 
@@ -37,6 +37,9 @@ void GameScreen::refresh(sf::Event e) {
 
             case sf::Keyboard::Down:
                 player2->go_down();
+                break;
+
+            default:
                 break;
         }
     }

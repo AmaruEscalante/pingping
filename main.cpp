@@ -32,7 +32,8 @@ int main()
         window.display();
     }*/
 //   Game game(400, 100, 10, 20);
-    Game pong(0,0,800,400);
+    Game pong(2500,500,800,400);
+    pong.execute();
 
 
     return 0;
